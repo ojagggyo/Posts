@@ -93,7 +93,7 @@ async function aaa(){
 let stok_records = [];	
 let start_index_stack = [];
 let end_index;
-window.clickBtn = function() {
+window.clickBtn = async () => {
 	let username = document.getElementById("username").value;
 	window.location.hash = '#' + username;
 	//初期設定
@@ -116,9 +116,9 @@ window.clickBtn = function() {
 		console.log(err);
 		document.getElementById("progress").innerText = JSON.stringify(err);
 	});
-}
+};
 
-window.clickBackBtn = function() {
+window.clickBackBtn = async () => {
 	if(end_index + 1 > stok_records.length - 1) return;
 	while (svg.lastChild) {
 	   svg.removeChild(svg.lastChild);
@@ -128,9 +128,9 @@ window.clickBackBtn = function() {
 	draw1(cur);
 	draw2(stok_records, index, cur);
 	start_index_stack.push(index);
-}
+};
 
-window.clickForwardBtn = function()  {
+window.clickForwardBtn = async () => {
 	if(start_index_stack.length <= 1) return;
 	while (svg.lastChild) {
 	   svg.removeChild(svg.lastChild);
@@ -140,7 +140,7 @@ window.clickForwardBtn = function()  {
 	let cur = new Date(stok_records[index].comment.created+"z");
 	draw1(cur);
 	draw2(stok_records, index, cur);	
-}
+};
 
 const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 function formatDate(date){
