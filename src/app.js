@@ -32,7 +32,9 @@ async function aaa(){
 	let username = document.getElementById("username").value
 	document.getElementById("text").innerHTML = '<tabel></tabel>';
 	//件数取得
-	let ret = await client.api.getBlog(username, entry_id, 1);
+	//let ret = await client.api.getBlog(username, entry_id, 1);
+	let ret = await client.database.call('get_cget_blog', [username, , entry_id, 1]);	
+
 	if(ret.length == 0){
 		document.getElementById("progress").innerText = ' データなし';	
 		return [];
@@ -59,7 +61,7 @@ async function aaa(){
 		let retry = 3;
 		while(true){
 			try{
-				ret = await client.api.getBlog(username, entry_id, limit);
+				ret = await client.database.call('get_cget_blog', [username, , entry_id, limit]);	
 				
 				entry_id = ret[ret.length - 1].entry_id;
 				if(entry_id != 0){
