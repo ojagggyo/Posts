@@ -1,6 +1,6 @@
 require("regenerator-runtime/runtime");
 const dsteem = require('dsteem');
-steem.api.setOptions({url: 'https://api.steemit.com'});
+const client = new dsteem.Client('https://api.steemit.com');
 
 
 function donokuraimae(date){
@@ -32,7 +32,7 @@ async function aaa(){
 	let username = document.getElementById("username").value
 	document.getElementById("text").innerHTML = '<tabel></tabel>';
 	//件数取得
-	let ret = await steem.api.getBlogAsync(username, entry_id, 1);
+	let ret = await client.api.getBlogAsync(username, entry_id, 1);
 	if(ret.length == 0){
 		document.getElementById("progress").innerText = ' データなし';	
 		return [];
@@ -59,7 +59,7 @@ async function aaa(){
 		let retry = 3;
 		while(true){
 			try{
-				ret = await steem.api.getBlogAsync(username, entry_id, limit);
+				ret = await client.api.getBlogAsync(username, entry_id, limit);
 				
 				entry_id = ret[ret.length - 1].entry_id;
 				if(entry_id != 0){
@@ -93,7 +93,7 @@ async function aaa(){
 let stok_records = [];	
 let start_index_stack = [];
 let end_index;
-window.clickBtn = () => {
+window.clickBtn = function() {
 	let username = document.getElementById("username").value;
 	window.location.hash = '#' + username;
 	//初期設定
@@ -118,7 +118,7 @@ window.clickBtn = () => {
 	});
 }
 
-window.clickBackBtn = () => {
+window.clickBackBtn = function() {
 	if(end_index + 1 > stok_records.length - 1) return;
 	while (svg.lastChild) {
 	   svg.removeChild(svg.lastChild);
@@ -130,7 +130,7 @@ window.clickBackBtn = () => {
 	start_index_stack.push(index);
 }
 
-window.clickForwardBtn= () => {
+window.clickForwardBtn = function()  {
 	if(start_index_stack.length <= 1) return;
 	while (svg.lastChild) {
 	   svg.removeChild(svg.lastChild);
