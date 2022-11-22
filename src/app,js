@@ -1,3 +1,8 @@
+require("regenerator-runtime/runtime");
+const dsteem = require('dsteem');
+steem.api.setOptions({url: 'https://api.steemit.com'});
+
+
 function donokuraimae(date){
 	date1 = new Date(date+"z");
 	var now = new Date();
@@ -8,6 +13,7 @@ function donokuraimae(date){
 	if(sa >= 1000){return Math.floor(sa / 1000)+'秒前';}
 	return 'たった今';
 }
+
 function nannichimae(date){
 	date1 = new Date(date+"z");
 	var now = new Date();
@@ -87,7 +93,7 @@ async function aaa(){
 let stok_records = [];	
 let start_index_stack = [];
 let end_index;
-function clickBtn(){
+window.clickBtn = () => {
 	let username = document.getElementById("username").value;
 	window.location.hash = '#' + username;
 	//初期設定
@@ -111,7 +117,8 @@ function clickBtn(){
 		document.getElementById("progress").innerText = JSON.stringify(err);
 	});
 }
-function clickBackBtn(){
+
+window.clickBackBtn = () => {
 	if(end_index + 1 > stok_records.length - 1) return;
 	while (svg.lastChild) {
 	   svg.removeChild(svg.lastChild);
@@ -122,7 +129,8 @@ function clickBackBtn(){
 	draw2(stok_records, index, cur);
 	start_index_stack.push(index);
 }
-function clickForwardBtn(){
+
+window.clickForwardBtn= () => {
 	if(start_index_stack.length <= 1) return;
 	while (svg.lastChild) {
 	   svg.removeChild(svg.lastChild);
@@ -156,8 +164,7 @@ function makeTable(records){
 	document.getElementById("text").innerHTML = html;
 }
 
-steem.api.setOptions({url: 'https://api.steemit.com'});
-//steem.api.setOptions({url: 'https://api.steemwow.com'});
+
 
 if(!('DOMAIN' in window)){DOMAIN = 'steemit.com';}
 const GETBLOG_LIMIT = 100;

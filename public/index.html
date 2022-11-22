@@ -1,76 +1,68 @@
 <html>
 <head>
-  <title>Blog</title>
-  <link rel="icon" href="favicon_getblog.ico" id="favicon">
-  <script src="https://github.com/steemit/steem-js/releases/download/v0.7.7/steem.min.js"></script>
-
-
-<style>
-#tooltip {
-	background: white;
-	padding: 10px;
-	box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-}
-#fixed {
-	position: fixed; /* 要素の位置を固定する */
-	top: 0; /* 基準の位置を画面の一番上に指定する */
-	left: 0; /* 基準の位置を画面の一番左に指定する */
-	margin: 0; /* 要素の余白を０にする */
-	padding: 10px 10px 0px 10px; /* 要素内側の余白を指定する */
-	width: 100%;
-	background-color: white;
-} 
-a {
-	text-decoration: none;
-}
-.lightgray {
-	color: lightgray;
-}
-.darkgray {
-	color: darkgray;
-}
-.darkgray:hover {
-	text-decoration: none;
-	color: red;
-}
-table {
-    border-collapse: collapse;
- }
-td  {
-	padding: 4px;
-	border: none;
-	border-top: 1px solid #000;
-	border-left: 0px solid #000;
-	border-bottom: 1px solid #000;
-	border-right: 0px solid #000;
-}
-</style>
-<!--<script>steem.api.setOptions({url: 'https://api.hive.blog/'});DOMAIN = "hive.blog";</script>-->
-<!--<script>const COLORS = ['#ede8f0', '#e998a8', '#c44063', '#a1304e', '#6e2139'];</script>--><!--hive color-->
-	
+	<title>Blog</title>
+	<link rel="icon" href="favicon_getblog.ico" id="favicon">
+	<script src="bundle.js"></script>
+	<style>
+	#tooltip {
+		background: white;
+		padding: 10px;
+		box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
+	}
+	#fixed {
+		position: fixed; /* 要素の位置を固定する */
+		top: 0; /* 基準の位置を画面の一番上に指定する */
+		left: 0; /* 基準の位置を画面の一番左に指定する */
+		margin: 0; /* 要素の余白を０にする */
+		padding: 10px 10px 0px 10px; /* 要素内側の余白を指定する */
+		width: 100%;
+		background-color: white;
+	} 
+	a {
+		text-decoration: none;
+	}
+	.lightgray {
+		color: lightgray;
+	}
+	.darkgray {
+		color: darkgray;
+	}
+	.darkgray:hover {
+		text-decoration: none;
+		color: red;
+	}
+	table {
+		border-collapse: collapse;
+	}
+	td  {
+		padding: 4px;
+		border: none;
+		border-top: 1px solid #000;
+		border-left: 0px solid #000;
+		border-bottom: 1px solid #000;
+		border-right: 0px solid #000;
+	}
+	</style>
 </head>
 <body>
-<form action="javascript:clickBtn();">
-<div id=fixed>
-<div id="tooltip" display="none" style="position: absolute; display: none;"></div>
-	<a style="font-size: xx-large">Blog</a>
-	| <a href="./getaccounthistory.0.17.html" class=darkgray>Account History</a>
-	| <a href="javascript:clickAppLink('https://steemit.com/@')" class=darkgray>steemit</a>
-	| <a href="javascript:clickAppLink('https://steemworld.org/@')" class=darkgray>steemworld</a>
-	| <a href="javascript:clickAppLink('./blurt/getblog.0.11.html#')" class=darkgray>Blurt</a>
-	| <a href="javascript:clickAppLink('./hive/getblog.0.11.html#')" class=darkgray>Hive</a>
-	| <br/>
-	<input type="text" id="username" size="20"> <input type="button" value="表示する" onclick="clickBtn()" />
-	<a id="progress"></a>
-	<input type="button" value="戻る" onclick="clickBackBtn()" />
-	<input type="button" value="進む" onclick="clickForwardBtn()" />
-	<br/>
-	<!--<a id="userlink"></a>-->
-	<div id="userlink" style="width: 95%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></div>
-	<!--<br/>-->
-	<svg id="svg" width="95%" height="125" style="background-color: #e8edf0;"></svg><br/>
-</div>
-	    <div id="text" style="margin: 240px 0px 0px 0px;"></div>
-</form>
+	<form action="javascript:clickBtn();">
+		<div id=fixed>
+		<div id="tooltip" display="none" style="position: absolute; display: none;"></div>
+			<a style="font-size: xx-large">Blog</a>
+			| <a href="javascript:clickAppLink('https://steemit.com/@')" class=darkgray>steemit</a>
+			| <a href="javascript:clickAppLink('https://steemworld.org/@')" class=darkgray>steemworld</a>
+			| <br/>
+			<input type="text" id="username" size="20"> <input type="button" value="表示する" onclick="clickBtn()" />
+			<a id="progress"></a>
+			<input type="button" value="戻る" onclick="clickBackBtn()" />
+			<input type="button" value="進む" onclick="clickForwardBtn()" />
+			<br/>
+			<!--<a id="userlink"></a>-->
+			<div id="userlink" style="width: 95%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"></div>
+			<!--<br/>-->
+			<svg id="svg" width="95%" height="125" style="background-color: #e8edf0;"></svg><br/>
+		</div>
+		<div id="text" style="margin: 240px 0px 0px 0px;"></div>
+	</form>
 </body>
 </html>

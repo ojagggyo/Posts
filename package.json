@@ -1,0 +1,19 @@
+{
+    "name": "blog",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "gogo": "git pull && webpack --production && cp ./dist/main.js ./public/bundle.js && node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "dsteem": "^0.11.3",
+        "koa": "^2.13.4",
+        "koa-static": "^5.0.0",
+        "regenerator-runtime": "^0.13.10",
+        "webpack": "^5.75.0"
+    }
+}
