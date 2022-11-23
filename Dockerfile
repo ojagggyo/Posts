@@ -16,5 +16,5 @@ COPY ./public /usr/src/public
 
 EXPOSE 3333
 
-#CMD [ "node", "index.js" ]
-CMD [ "pwd" ]
+CMD [ "node", "index.js" ]
+#CMD [ "pwd" ]
