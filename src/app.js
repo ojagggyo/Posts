@@ -402,7 +402,8 @@ function userlink(){
   document.getElementById("userlink").innerHTML = s;
 }
 
-function clickUserLink(username){
+
+window.clickUserLink = async (username) => {
 	document.getElementById("username").value = username;
 	clickBtn();
 }
