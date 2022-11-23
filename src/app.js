@@ -1,8 +1,8 @@
 require("regenerator-runtime/runtime");
 const dsteem = require('dsteem');
 //const client = new dsteem.Client('https://api.steemit.com');
-const client = new dsteem.Client('https://api.steememory.com');
-
+//const client = new dsteem.Client('https://api.steememory.com');
+const client = new dsteem.Client('http://192.168.3.6:8080');
 
 function donokuraimae(date){
 	date1 = new Date(date+"z");
