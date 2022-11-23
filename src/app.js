@@ -7,12 +7,18 @@ function donokuraimae(date){
 	date1 = new Date(date+"z");
 	var now = new Date();
 	sa = now - date1;
-	if(sa >= 86400000){return Math.floor(sa / 86400000)+'日前';}
-	if(sa >= 3600000){return Math.floor(sa / 3600000)+'時間前';}
-	if(sa >= 60000){return Math.floor(sa / 60000)+'分前';}
-	if(sa >= 1000){return Math.floor(sa / 1000)+'秒前';}
-	return 'たった今';
+	// if(sa >= 86400000){return Math.floor(sa / 86400000)+'日前';}
+	// if(sa >= 3600000){return Math.floor(sa / 3600000)+'時間前';}
+	// if(sa >= 60000){return Math.floor(sa / 60000)+'分前';}
+	// if(sa >= 1000){return Math.floor(sa / 1000)+'秒前';}
+	// return 'たった今';
+	if(sa >= 86400000){return Math.floor(sa / 86400000)+'days ago';}
+	if(sa >= 3600000){return Math.floor(sa / 3600000)+'hours ago';}
+	if(sa >= 60000){return Math.floor(sa / 60000)+'minutes ago';}
+	if(sa >= 1000){return Math.floor(sa / 1000)+'seconds ago';}
+	return 'just now';
 }
+
 
 function nannichimae(date){
 	date1 = new Date(date+"z");
