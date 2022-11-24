@@ -7,11 +7,10 @@ WORKDIR /app
 # アプリケーションの依存関係をインストールする
 COPY package*.json ./
 
-RUN npm install
+#RUN npm install
 
 # アプリケーションのソースをバンドルする
 COPY . .
-#COPY ./public ./public
 
 EXPOSE 3000
 
