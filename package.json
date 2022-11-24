@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "gogo": "git pull && webpack --production && cp ./dist/main.js ./public/bundle.js && node index.js",
-        "g": "git pull && webpack --production"
+        "g": "git pull && webpack --mode production"
     },
     "author": "",
     "license": "ISC",
