@@ -150,11 +150,12 @@ window.clickForwardBtn = async () => {
 	draw2(stok_records, index, cur);	
 };
 
-const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+//const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+const months = ["Jan.","Feb.","Mar.","Apr.","May.","Jun.","Jul.","Aug.","Sep.","Oct.","Nov.","Dec."];
 function formatDate(date){
 	let date1 = new Date(date + "z");
-	//return date1.getDate() + "." + months[date1.getMonth()] + "." + date1.getFullYear();
-	return date1.getFullYear() + "." + months[date1.getMonth()] + "." + date1.getDate();
+	//return date1.getFullYear() + "." + months[date1.getMonth()] + "." + date1.getDate();
+	return months[date1.getMonth()] + "" + date1.getDate() + "." + date1.getFullYear() ;
 }
 	
 function makeTable(records){
