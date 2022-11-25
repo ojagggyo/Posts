@@ -38,7 +38,6 @@ async function aaa(){
 	let username = document.getElementById("username").value
 	document.getElementById("text").innerHTML = '<tabel></tabel>';
 	//件数取得
-	//let ret = await client.api.getBlog(username, entry_id, 1);
 	let ret = await client.database.call('get_blog', [username, entry_id, 1]);	
 
 	if(ret.length == 0){
