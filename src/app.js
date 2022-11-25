@@ -1,3 +1,5 @@
+import './app.css';
+
 require("regenerator-runtime/runtime");
 const dsteem = require('dsteem');
 //const client = new dsteem.Client('https://api.steemit.com');
