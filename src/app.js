@@ -428,6 +428,7 @@ function getUserName(){
 	console.log(api);
 	if(api){
 		console.log(api);
+		client = null;
 		client = new dsteem.Client(api);
 	}
 
