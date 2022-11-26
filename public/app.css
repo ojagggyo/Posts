@@ -40,3 +40,7 @@ td  {
 .copyright {
     color: gray;
 }
+.copyright:hover {
+    text-decoration: none;
+    color: red;
+}
