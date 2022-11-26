@@ -1,7 +1,7 @@
 require("regenerator-runtime/runtime");
 const dsteem = require('dsteem');
-//const client = new dsteem.Client('https://api.steemit.com');
-const client = new dsteem.Client('https://api.steememory.com');
+//const client = new dsteem.Client('https://api.steememory.com');
+let client = new dsteem.Client('https://api.steememory.com');
 
 function donokuraimae(date){
 	date1 = new Date(date+"z");
@@ -424,7 +424,12 @@ function getUserName(){
 
 	let url = new URL(window.location.href);
 	let params = url.searchParams;
-	console.log(params.get('api'));
+	let api = params.get('api');
+	console.log(api);
+	if(api){
+		console.log(api);
+		client = new dsteem.Client(api);
+	}
 
   let hash = window.location.hash;// #username
   if (hash == null || hash.trim().length == 0){
