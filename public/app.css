@@ -40,7 +40,10 @@ td  {
 .copyright {
     color: gray;
 }
-.copyright:hover {
+.author {
+    color: gray;
+}
+.author:hover {
     text-decoration: none;
     color: red;
 }
