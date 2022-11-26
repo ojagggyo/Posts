@@ -421,6 +421,11 @@ function clickAppLink(appname){
 	
 // ----------  ----------
 function getUserName(){
+
+	let url = new URL(window.location.href);
+	let params = url.searchParams;
+	console.log(params.get('api'));
+
   let hash = window.location.hash;// #username
   if (hash == null || hash.trim().length == 0){
 	  return "";
