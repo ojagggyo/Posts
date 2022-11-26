@@ -12,6 +12,10 @@ function donokuraimae(date){
 	// if(sa >= 60000){return Math.floor(sa / 60000)+'分前';}
 	// if(sa >= 1000){return Math.floor(sa / 1000)+'秒前';}
 	// return 'たった今';
+
+	64,495,283
+
+	if(sa >= 2360591558*2){return Math.floor(sa / 86400000)+' moons ago';}//27.32166155*3600*24
 	if(sa >= 86400000*2){return Math.floor(sa / 86400000)+' days ago';}
 	if(sa >= 3600000*2){return Math.floor(sa / 3600000)+' hours ago';}
 	if(sa >= 60000*2){return Math.floor(sa / 60000)+' minutes ago';}
