@@ -1,6 +1,5 @@
 require("regenerator-runtime/runtime");
 const dsteem = require('dsteem');
-//const client = new dsteem.Client('https://api.steememory.com');
 let client = new dsteem.Client('https://api.steememory.com');
 
 function donokuraimae(date){
@@ -12,8 +11,6 @@ function donokuraimae(date){
 	// if(sa >= 60000){return Math.floor(sa / 60000)+'分前';}
 	// if(sa >= 1000){return Math.floor(sa / 1000)+'秒前';}
 	// return 'たった今';
-
-	64,495,283
 
 	if(sa >= 2360591558*2){return Math.floor(sa / 2360591558)+' moons ago';}//27.32166155*3600*24
 	if(sa >= 86400000*2){return Math.floor(sa / 86400000)+' days ago';}
