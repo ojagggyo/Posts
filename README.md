@@ -8,8 +8,7 @@ npm install webpack
 
 
 ### 
-git pull  
-webpack --mode production
+git pull && webpack --mode production
 
 ### dockerイメージ作成
 sudo docker build . -t ojagggyo/posts
