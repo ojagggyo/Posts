@@ -6,12 +6,7 @@ function donokuraimae(date){
 	date1 = new Date(date+"z");
 	var now = new Date();
 	sa = now - date1;
-	// if(sa >= 86400000){return Math.floor(sa / 86400000)+'日前';}
-	// if(sa >= 3600000){return Math.floor(sa / 3600000)+'時間前';}
-	// if(sa >= 60000){return Math.floor(sa / 60000)+'分前';}
-	// if(sa >= 1000){return Math.floor(sa / 1000)+'秒前';}
-	// return 'たった今';
-
+	if(sa >= 13148718804*2){return Math.floor(sa / 13148718804)+' earths ago';}//365.242189*3600*24
 	if(sa >= 2360591558*2){return Math.floor(sa / 2360591558)+' moons ago';}//27.32166155*3600*24
 	if(sa >= 86400000*2){return Math.floor(sa / 86400000)+' days ago';}
 	if(sa >= 3600000*2){return Math.floor(sa / 3600000)+' hours ago';}
