@@ -403,10 +403,9 @@ window.clickUserLink = async (username) => {
 	clickBtn();
 }
 
-function clickAppLink(appname){
-	username = document.getElementById("username").value;
-	//location.href = appname + username;
 
+window.clickAppLink = async (appname) => {
+	username = document.getElementById("username").value;
 	var a = document.createElement('a');
 	a.href = appname + username;
 	a.target = '_blank';
